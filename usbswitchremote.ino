@@ -38,6 +38,7 @@ void setup() {
   for( int i=PINMIN; i <= PINMAX; i++ )
   {
     pinMode(i,OUTPUT);
+    digitalWrite(i, HIGH);
   }
   
 }
@@ -64,8 +65,9 @@ void fakePush(int pin)
     Serial.print(pin);
     Serial.print("\n");
     digitalWrite(pin, LOW);
-    delay(100);
+    delay(50);
     digitalWrite(pin, HIGH);
+    digitalWrite(ledPin, LOW);
 }
 
 void translateIR(decode_results& ir)
